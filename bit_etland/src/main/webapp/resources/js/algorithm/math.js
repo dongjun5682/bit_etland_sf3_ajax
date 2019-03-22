@@ -1,17 +1,29 @@
-function sequence(){
-	_sequence.remove();
+function math(){
+	_math.remove();
+	$('#right_start').empty();
+	$('#new_div').removeAttr('style');
 	$('#right_content').prepend($$.div({id:'right_start'}));
 	$('#leave_a_comment').before('<div id="right_end"/>')
-	$('#right_start').nextUntil('#right_end').wrapAll('<div id="new_div"></div>');
-	$('#nav').children().eq(1).removeClass('active');
-	$('#nav').children().eq(0).attr('class','active');
-	$('#right_end').remove();
-	let str = $('#new_div').html();
+	$('#right_start').nextUntil('#right_end').wrapAll('<div id="new_div_math"></div>');
+	$('#nav').children().eq(0).removeClass('active');
+	$('#nav').children().eq(1).attr('class','active');
+	let str = $('#new_div_math').html();
+	
 	let arr = [
-		{id:'ari' ,val :'등차수열의 합계'},
-		{id:'geo' ,val :'등비수열의 합계'},
-		{id:'fac' ,val :'팩토리수열의 합계'},
-		{id:'fibo' ,val :'피보나치수열의 합계'}
+		{id:'count' ,val :'Count 알고리즘'},
+		{id:'geo' ,val :'최댓값과 최솟값'},
+		{id:'fac' ,val :'합계와 평균'},
+		{id:'fibo' ,val :'소수 판별'},
+		{id:'fibo' ,val :'소인수 분해'},
+		{id:'fibo' ,val :'배수와 공배수'},
+		{id:'fibo' ,val :'약수와 완전수'},
+		{id:'fibo' ,val :'최대공약수와 최소공배수'},
+		{id:'fibo' ,val :'근사값'},
+		{id:'fibo' ,val :'10진수와 2진수의 변환'},
+		{id:'fibo' ,val :'10진수와 16진수의 변환'},
+		{id:'fibo' ,val :'BCD 코드와 3초과 코드의 변환'},
+		{id:'fibo' ,val :'1의 보수와 2의 보수'},
+		{id:'fibo' ,val :'패리티 비트 검증'}
 		];
 	$.each(arr,(i,j)=>{
 			let GID = Math.floor(Math.random() * 10000) + 1;
@@ -46,7 +58,7 @@ function sequence(){
 	        let x=[{cls:'start',txt:'시작값'},
 	        		{cls:'end',txt:'한계값'},
 	        		{cls:'diff',txt:'공차'}];
-	        $(_sequence.inputForm(x)).appendTo(_INPUT);
+	        $(_math.inputForm(x)).appendTo(_INPUT);
 	        $('#del_start').remove();
 	        $('#del_end').remove();
 	        $('<span class="label label-danger"></span>')
@@ -81,14 +93,15 @@ function sequence(){
 			.appendTo(_BTN)
 			.click(()=>{
 				$(_INPUT).empty();
-				$(_sequence.inputForm(x))
+				$(_math.inputForm(x))
 					.appendTo(_INPUT);
 			}); 
 });
-	$('#new_div').attr('style', 'display:none');
+	$('#new_div_math').remove();
+	
 }
 
-var _sequence = {
+var _math = {
 		inputForm : (x)=>{
 			let html = '<form>';
 			$.each(x, (i,j)=>{

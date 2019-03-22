@@ -22,3 +22,5 @@ $$ = {
 		 return $('<input type='+x.type+' id='+x.id+' />');
 	 }
 };
+
+
