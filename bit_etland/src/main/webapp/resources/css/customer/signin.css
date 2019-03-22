@@ -1,0 +1,15 @@
+@CHARSET "UTF-8";
+#confirm_btn{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    margin: auto;
+}
+
+#form div{
+  border-radius: 5px;
+  background-color: white;
+  padding: 10px;
+}
+.input-group-addon, .input-group-btn {
+    width: 15%;
+ }

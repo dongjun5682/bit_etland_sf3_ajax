@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+.row{
+	grid-column-start:1;
+    grid-column-end: 5;
+}
+#cust_nav{
+	grid-column-start:1;
+    grid-column-end: 7;
+    height:80px;
+}
+#profile_img{
+	width: 60px;
+	height: 60px;
+}
